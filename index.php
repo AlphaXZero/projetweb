@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__ . "/config/config.php";
-require_once __DIR__ . "/templates/header.php"; ?>
+require_once __DIR__ . "/templates/header.php";
+$page_tile = "Homepage";
+$meta_descritipion = "This is the homepage of my site";
+?>
 
 <h1>Home</h1>
 <p>

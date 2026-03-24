@@ -5,7 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
-    <title>Document</title>
+    <meta name="description" content=<?= $meta_description ?? "default description" ?>>
+    <title><?= $title_page ?? "default" ?>></title>
 </head>
 
 <body>
