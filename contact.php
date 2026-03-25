@@ -1,8 +1,8 @@
 <?php
+$title_page = "Contact";
+$meta_description = "This is the page to contact me";
 require_once __DIR__ . "/config/config.php";
 require_once __DIR__ . "/templates/header.php";
-$page_tile = "Contact";
-$meta_descritipion = "This is the page to contact me";
 ?>
 
 <h1>Contact</h1>
