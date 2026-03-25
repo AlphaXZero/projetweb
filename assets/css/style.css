@@ -2,16 +2,15 @@
     --bg-primary: #0f0f0f;
     --bg-secondary: #1a1a1a;
     --bg-tertiary: #2a2a2a;
-
     --text-primary: #ffffff;
     --text-secondary: #e0e0e0;
     --text-muted: #aaaaaa;
     --text-faint: #555555;
-
     --accent: #a0c4ff;
     --accent-hover: #ffffff;
-
     --border: #2a2a2a;
+    --color-error: #ff6b6b;
+    --color-success: #69db7c;
 }
 
 *,
@@ -100,7 +99,7 @@ label {
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.25rem;
 }
 
 input,
@@ -149,4 +148,37 @@ button {
 button:hover {
     background-color: var(--accent);
     color: var(--bg-primary);
+}
+
+.error_log {
+    display: none;
+    color: var(--color-error);
+    font-size: 0.85em;
+    margin-top: 0.25rem;
+}
+
+.error_log.active {
+    display: block;
+}
+
+.form_state {
+    display: none;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    margin-bottom: 1rem;
+}
+
+
+
+.form_state.success {
+    display: block;
+    color: var(--color-success);
+    border: 1px solid var(--color-success);
+}
+
+.form_state.error {
+    display: block;
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
 }
