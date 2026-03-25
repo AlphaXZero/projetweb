@@ -13,8 +13,8 @@ require_once __DIR__ . "/handlers/handle_contact.php";
 
 <form method="post">
     <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname" required minlength="2" maxlength="255">
-    <div class="error_log<?= !empty($errors["fname"]) ? " active" : "" ?>" id="fname_log" value="<?= htmlspecialchars($old_values["fname"] ?? "") ?>"><?= $errors["fname"] ?? "" ?></div>
+    <input type="text" id="fname" name="fname" required minlength="2" maxlength="255" value="<?= htmlspecialchars($old_values["fname"] ?? "") ?>">
+    <div class="error_log<?= !empty($errors["fname"]) ? " active" : "" ?>" id="fname_log"><?= $errors["fname"] ?? "" ?></div>
 
     <label for="lname">Last name:</label>
     <input type="text" id="lname" name="lname" minlength="2" maxlength="255" value="<?= htmlspecialchars($old_values["lname"] ?? "") ?>">
