@@ -53,3 +53,15 @@ function add_user(string $nickname, string $email, string $password): int
 
     return (int) $pdo->lastInsertId();
 }
+
+function get_user_by_id(int $id): array|false
+{
+    $pdo = get_database_connection();
+
+    $query = 'SELECT * FROM t_user_usr WHERE usr_id = :id';
+    $stmt = $pdo->prepare($query);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
