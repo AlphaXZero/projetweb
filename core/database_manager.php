@@ -1,9 +1,9 @@
 <?php
 require_once dirname(__DIR__) . '/config/config.php';
 
-function getDatabaseConnection(): PDO
+function get_database_connection(): PDO
 {
-    $config = getDatabaseConfig();
+    $config = get_database_config();
 
     $dsn = "mysql:host={$config['server']};dbname={$config['database']};charset=utf8mb4";
 

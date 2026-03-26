@@ -1,7 +1,7 @@
 <?php
 require_once dirname(__DIR__) . '/config/config.php';
 
-function handleException(Exception $e): void
+function handle_exception(Exception $e): void
 {
     if (defined('DEV_MODE') && DEV_MODE === true) {
         echo 'An error occurred: ' . $e->getMessage();
