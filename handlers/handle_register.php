@@ -1,5 +1,6 @@
 <?php
-
+require_once __DIR__ . "/../models/user_model.php";
+require_once __DIR__ . "/../core/error_manager.php";
 $errors = [];
 $status_msg = "";
 $old_values = [];
@@ -30,7 +31,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors["register_password"] = "Password and password confirmation must match.";
     }
     if (empty($errors)) {
-        $status_msg = "Your registeration has been successfully. You can now log in";
+        try {
+            $db_nickname = get_user_by_nickname($register_nickname);
+            $db_email    = get_user_by_email($email);
+
+            if ($db_nickname !== false) {
+                $errors["register_nickname"] = "This nickname is already taken.";
+            }
+            if ($db_email !== false) {
+                $errors["email"] = "This email address is already used.";
+            }
+
+            if (empty($errors)) {
+                add_user($register_nickname, $email, $register_password);
+                $status_msg = "Your registration was successful. You can now log in.";
+            } else {
+                $status_msg = "Please correct the errors in the form below.";
+                $old_values = [
+                    "register_nickname" => $register_nickname,
+                    "email"             => $email,
+                ];
+            }
+        } catch (Exception $e) {
+            handle_exception($e);
+            $status_msg = "An error occurred. Please try again later.";
+        }
     } else {
         $status_msg = "Please correct the errors in the form below.";
         $old_values = [

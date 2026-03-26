@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__DIR__) . '/core/database_manager.php';
+require_once __DIR__ . '/../core/database_manager.php';
 
 function get_user_by_nickname(string $nickname): array|false
 {
