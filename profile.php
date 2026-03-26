@@ -12,8 +12,8 @@ require_once __DIR__ . "/templates/header.php";
 <?php else: ?>
     <?php $user = get_user_by_id($_SESSION['user_id']); ?>
 
-    <p>Nickname : <?= $user["usr_nickname"] ?></p>
-    <p>Email : <?= $user["usr_email"] ?></p>
+    <p>Nickname : <?= htmlspecialchars($user["usr_nickname"], ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8") ?></p>
+    <p>Email : <?= htmlspecialchars($user["usr_email"], ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8") ?></p>
     <form method="post" action="<?= BASE_URL ?>/handlers/handle_logout.php">
         <button type="submit">Log out</button>
     </form>
