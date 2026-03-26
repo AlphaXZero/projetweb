@@ -48,7 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $user = get_user_by_nickname($register_nickname);
                 disconnect_user();
                 connect_user($user["usr_id"]);
-                $status_msg = "Your registration was successful. Welcome " . htmlspecialchars($user["usr_nickname"], ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8") . ".";
+                header('Location: ' . BASE_URL . '/profile.php');
+                exit;
             } else {
                 $status_msg = "Please correct the errors in the form below.";
                 $old_values = [

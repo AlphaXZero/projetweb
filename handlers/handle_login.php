@@ -35,7 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 disconnect_user();
                 connect_user($user["usr_id"]);
-                $status_msg = "Welcome back, " . htmlspecialchars($user["usr_nickname"], ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8") . "!";
+                header('Location: ' . BASE_URL . '/profile.php');
+                exit;
             }
         } catch (Exception $e) {
             handle_exception($e);
