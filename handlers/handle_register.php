@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/../models/user_model.php";
 require_once __DIR__ . "/../core/error_manager.php";
+require_once __DIR__ . "/../core/auth_manager.php";
 $errors = [];
 $status_msg = "";
 $old_values = [];
@@ -44,7 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if (empty($errors)) {
                 add_user($register_nickname, $email, $register_password);
-                $status_msg = "Your registration was successful. You can now log in.";
+                $user = get_user_by_nickname($register_nickname);
+                disconnect_user();
+                connect_user($user["usr_id"]);
+                $status_msg = "Your registration was successful. Welcome " . $user["usr_nickname"] . ".";
             } else {
                 $status_msg = "Please correct the errors in the form below.";
                 $old_values = [
