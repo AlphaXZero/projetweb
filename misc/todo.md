@@ -1,8 +1,10 @@
 TODOLIST
 # code
-- [ ] Css convenable
-- [ ] échappé contenu php (htmlspecialchars)
+- [x] Css convenable
+- [x] échappé contenu php (htmlspecialchars)
 - [ ] vérifier portabilité
+- [ ] envoie courriel
+- [ ] ajouter vérif pas dans bdd
 
 # readme
 - [ ] lien vers todo et comment créer setup apache
