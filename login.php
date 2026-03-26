@@ -1,6 +1,6 @@
 <?php
-$title_page = "Register";
-$meta_description = "This is the registration page of my site";
+$title_page = "LogIn";
+$meta_description = "This is the log in page of my site";
 require_once __DIR__ . "/config/config.php";
 require_once __DIR__ . "/templates/header.php";
 require_once __DIR__ . "/handlers/handle_login.php";
@@ -13,7 +13,7 @@ require_once __DIR__ . "/handlers/handle_login.php";
 
 
     <label for="login_password">Password:</label>
-    <input type="password" id="login_password" name="login_password" required minlength="8" maxlength="72" value="<?= htmlspecialchars($old_values["login_password"] ?? "") ?>">
+    <input type="password" id="login_password" name="login_password" required minlength="8" maxlength="72">
     <div class="error_log<?= !empty($errors["login_password"]) ? " active" : "" ?>" id="message_log"><?= $errors["login_password"] ?? "" ?></div>
 
 

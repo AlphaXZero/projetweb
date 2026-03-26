@@ -16,11 +16,11 @@ require_once __DIR__ . "/handlers/handle_register.php";
     <div class="error_log<?= !empty($errors["email"]) ? " active" : "" ?>" id="email_log"><?= $errors["email"] ?? "" ?></div>
 
     <label for="register_password">Password:</label>
-    <input type="password" id="register_password" name="register_password" minlength="8" maxlength="72" required></input>
+    <input type="password" id="register_password" name="register_password" minlength="8" maxlength="72" required>
     <div class="error_log<?= !empty($errors["register_password"]) ? " active" : "" ?>" id="message_log"><?= $errors["register_password"] ?? "" ?></div>
 
     <label for="register_password_valid">Confirm password:</label>
-    <input type="password" id="register_password_valid" name="register_password_valid" minlength="8" maxlength="72" required></input>
+    <input type="password" id="register_password_valid" name="register_password_valid" minlength="8" maxlength="72" required>
     <div class="error_log<?= !empty($errors["register_password_valid"]) ? " active" : "" ?>" id="message_log"><?= $errors["register_password_valid"] ?? "" ?></div>
 
     <button type="submit">Submit</button>

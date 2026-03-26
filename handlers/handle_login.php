@@ -24,8 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $status_msg = "Invalid credentials. Please check your username and password.";
         $old_values = [
-            "login_nickname" => $login_nickname,
-            "login_password" => $login_password
+            "login_nickname" => $login_nickname
         ];
     }
 }

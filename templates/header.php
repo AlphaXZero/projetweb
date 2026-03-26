@@ -8,7 +8,9 @@
     <meta name="description" content="<?= $meta_description ?? "default description" ?>">
     <title><?= $title_page ?? "default" ?></title>
 </head>
-<?php require_once __DIR__ . "/navbar.php" ?>
 
 <body>
+    <?php require_once __DIR__ . "/navbar.php" ?>
+
+
     <main>
