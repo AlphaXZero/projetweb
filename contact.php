@@ -27,9 +27,16 @@ require_once __DIR__ . "/handlers/handle_contact.php";
     <label for="message">Message:</label>
     <textarea id="message" name="message" minlength="10" maxlength="3000" required><?= htmlspecialchars($old_values["message"] ?? "") ?></textarea>
     <div class="error_log<?= !empty($errors["message"]) ? " active" : "" ?>" id="message_log"><?= $errors["message"] ?? "" ?></div>
-
     <button type="submit">Submit</button>
-    <div class="form_state<?= $status_msg !== "" ? (empty($errors) ? " success" : " error") : "" ?>"><?= $status_msg ?></div>
+
+    <?php if ($status_msg !== ""): ?>
+        <script>
+            new Toast(
+                "<?= htmlspecialchars($status_msg, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>",
+                "<?= empty($errors) ? 'success' : 'error' ?>"
+            ).show();
+        </script>
+    <?php endif; ?>
 </form>
 
 

@@ -18,7 +18,14 @@ require_once __DIR__ . "/handlers/handle_login.php";
 
 
     <button type="submit">Submit</button>
-    <div class="form_state<?= $status_msg !== "" ? (empty($errors) ? " success" : " error") : "" ?>"><?= $status_msg ?></div>
+    <?php if ($status_msg !== ""): ?>
+        <script>
+            new Toast(
+                "<?= htmlspecialchars($status_msg, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>",
+                "<?= empty($errors) ? 'error' : 'success' ?>"
+            ).show();
+        </script>
+    <?php endif; ?>
 </form>
 
 <?php require_once __DIR__ . "/templates/footer.php"; ?>
