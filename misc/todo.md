@@ -4,7 +4,8 @@ TODOLIST
 - [x] échappé contenu php (htmlspecialchars)
 - [ ] vérifier portabilité
 - [ ] envoie courriel
-- [ ] ajouter vérif pas dans bdd
+- [x] ajouter vérif pas dans bdd
+- [ ] ajouter dans header.php <?= is_connected()  ? get_user_by_id($_SESSION['user_id'])["usr_nickname"] : "<a href='login.php'>You are not logged in </a>" ?>
 
 # readme
 - [ ] lien vers todo et comment créer setup apache
