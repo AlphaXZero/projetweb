@@ -9,5 +9,6 @@ $current_page = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         <li><a href="<?= BASE_URL ?>/contact.php" class="<?= $current_page == BASE_URL . "/contact.php" ? "active" : "" ?>">Contact</a></li>
         <li><a href="<?= BASE_URL ?>/register.php" class="<?= $current_page == BASE_URL . "/register.php" ? "active" : "" ?>">Register</a></li>
         <li><a href="<?= BASE_URL ?>/login.php" class="<?= $current_page == BASE_URL . "/login.php" ? "active" : "" ?>">Log In</a></li>
+        <li><a href="<?= BASE_URL ?>/profile.php" class="<?= $current_page == BASE_URL . "/Profile.php" ? "active" : "" ?>">Profile</a></li>
     </ul>
 </nav>

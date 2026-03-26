@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/../models/user_model.php";
 require_once __DIR__ . "/../core/error_manager.php";
+require_once __DIR__ . "/../core/auth_manager.php";
 
 $errors = [];
 $status_msg = "";
@@ -32,6 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     "login_nickname" => $login_nickname,
                 ];
             } else {
+                disconnect_user();
+                connect_user($user["usr_id"]);
                 $status_msg = "Welcome back, " . htmlspecialchars($user["usr_nickname"], ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8") . "!";
             }
         } catch (Exception $e) {
