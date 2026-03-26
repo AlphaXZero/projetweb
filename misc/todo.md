@@ -5,8 +5,7 @@ TODOLIST
 - [ ] vérifier portabilité
 - [ ] envoie courriel
 - [x] ajouter vérif pas dans bdd
-- [ ] ajouter dans header.php <?= is_connected()  ? get_user_by_id($_SESSION['user_id'])["usr_nickname"] : "<a href='login.php'>You are not logged in </a>" ?>
-
+- [x] ajouter your are logged in dans navebar
 - [ ] rajouter bouton deco navbar et enlever log et register si co
 - [ ] passer secure en true dans auth_manager pour https
 
@@ -16,7 +15,6 @@ TODOLIST
 - [ ] style avec claude
 - [ ] <a target="_blank" href="https://icons8.com/icon/m2pDdOp2qrzE/rock">Stone</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 - [ ] i used mariadb
-
 CREATE DATABASE bdd_project_web
 DEFAULT CHARACTER SET utf8mb4
 DEFAULT COLLATE utf8mb4_unicode_ci;

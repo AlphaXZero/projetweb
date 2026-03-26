@@ -1,13 +1,15 @@
 <?php
 function configure_session(): void
 {
-    ini_set('session.use_strict_mode', 1);
+    if (session_status() === PHP_SESSION_NONE) {
+        ini_set('session.use_strict_mode', 1);
 
-    session_set_cookie_params([
-        'secure'   => false, // true en production (HTTPS)
-        'httponly' => true,
-        'samesite' => 'Lax'
-    ]);
+        session_set_cookie_params([
+            'secure'   => false,
+            'httponly' => true,
+            'samesite' => 'Lax'
+        ]);
+    }
 }
 
 function connect_user(int $id): void
@@ -29,8 +31,10 @@ function is_connected(): bool
 
 function disconnect_user(): void
 {
-    configure_session();
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        configure_session();
+        session_start();
+    }
     unset($_SESSION['user_id']);
     session_destroy();
 }

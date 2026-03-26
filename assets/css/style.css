@@ -11,6 +11,7 @@
     --border: #2a2a2a;
     --color-error: #ff6b6b;
     --color-success: #69db7c;
+    --radius: 4px;
 }
 
 *,
@@ -27,44 +28,99 @@ body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     font-size: 16px;
     line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-a {
-    color: var(--accent);
-    text-decoration: none;
+main {
+    flex: 1;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 2rem;
 }
 
-a:hover {
-    color: var(--accent-hover);
-}
-
+/* ── Navigation ── */
 nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--bg-secondary);
     border-bottom: 1px solid var(--border);
-    padding: 1rem 2rem;
+    padding: 0.875rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    gap: 1.75rem;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
     color: var(--text-muted);
-    font-size: 14px;
-    letter-spacing: 0.05em;
+    font-size: 13px;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
 }
 
 nav a:hover {
     color: var(--text-primary);
 }
 
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
+nav a.active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+nav form {
+    display: flex;
+    flex-direction: unset;
+    gap: 0;
+}
+
+nav form button {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.15s;
+}
+
+nav form button:hover {
+    color: var(--text-primary);
+    background: none;
+}
+
+nav .nav-user {
+    font-size: 13px;
+    color: var(--text-faint);
+    letter-spacing: 0.04em;
+}
+
+/* ── Typography ── */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+a:hover {
+    color: var(--accent-hover);
 }
 
 h1 {
@@ -74,19 +130,28 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
+h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
 p {
     color: var(--text-muted);
     margin-bottom: 1rem;
 }
 
+/* ── Footer ── */
 footer {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     border-top: 1px solid var(--border);
     color: var(--text-faint);
-    font-size: 14px;
+    font-size: 13px;
 }
 
+/* ── Forms ── */
 form {
     display: flex;
     flex-direction: column;
@@ -95,10 +160,10 @@ form {
 
 label {
     display: block;
-    font-size: 13px;
+    font-size: 12px;
     color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     margin-bottom: 0.25rem;
 }
 
@@ -108,7 +173,7 @@ textarea {
     background-color: var(--bg-secondary);
     color: var(--text-secondary);
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: var(--radius);
     padding: 0.65rem 1rem;
     font-family: inherit;
     font-size: 15px;
@@ -136,10 +201,10 @@ button {
     background-color: transparent;
     color: var(--accent);
     border: 1px solid var(--accent);
-    border-radius: 4px;
+    border-radius: var(--radius);
     padding: 0.65rem 1.5rem;
-    font-size: 14px;
-    letter-spacing: 0.05em;
+    font-size: 13px;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
@@ -150,11 +215,12 @@ button:hover {
     color: var(--bg-primary);
 }
 
+/* ── Form feedback ── */
 .error_log {
     display: none;
     color: var(--color-error);
-    font-size: 0.85em;
-    margin-top: 0.25rem;
+    font-size: 0.8em;
+    margin-top: 0.2rem;
 }
 
 .error_log.active {
@@ -164,27 +230,20 @@ button:hover {
 .form_state {
     display: none;
     padding: 0.75rem 1rem;
-    border-radius: 4px;
+    border-radius: var(--radius);
     font-size: 0.9em;
-    margin-bottom: 1rem;
 }
-
-
 
 .form_state.success {
     display: block;
     color: var(--color-success);
     border: 1px solid var(--color-success);
+    background-color: rgba(105, 219, 124, 0.05);
 }
 
 .form_state.error {
     display: block;
     color: var(--color-error);
     border: 1px solid var(--color-error);
-}
-
-nav a.active {
-    color: var(--accent);
-    font-weight: bold;
-    border-bottom: 2px solid var(--accent);
+    background-color: rgba(255, 107, 107, 0.05);
 }
