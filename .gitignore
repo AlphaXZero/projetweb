@@ -1,5 +1,7 @@
 # Logs Apache
 *.log
+#logs error_db
+logs/*.log
 
 # Variables d'environnement et config sensible
 .env
