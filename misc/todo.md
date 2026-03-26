@@ -29,3 +29,10 @@ CREATE TABLE t_user_usr (
     usr_account_active BOOLEAN DEFAULT 1,
     usr_activation_code CHAR(5) NULL
 ) ENGINE=InnoDB;
+
+
+-fade-up — apparaît en montant
+fade-in — apparaît en fondu
+fade-left / fade-right — apparaît depuis le côté
+
+data-aos-delay="100"

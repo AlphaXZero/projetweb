@@ -7,11 +7,8 @@ require_once __DIR__ . "/handlers/handle_contact.php";
 ?>
 
 <h1>Contact</h1>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum metus sit amet mi ullamcorper, ac imperdiet neque tempus. Sed nec mattis odio. Proin pellentesque ipsum lacus, sit amet suscipit nunc sodales sagittis. Vivamus tristique mi quis ultrices laoreet. Aliquam luctus semper ante a posuere. Nulla iaculis orci vitae lorem interdum, sed porttitor elit feugiat. Integer pretium purus a imperdiet convallis. Morbi viverra dolor a erat bibendum rutrum. Fusce quis pharetra mauris, non auctor odio. Nunc hendrerit enim in elit finibus, sed pellentesque libero molestie. Integer non bibendum ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed magna ultrices, aliquet neque sit amet, faucibus urna.
-</p>
 
-<form method="post">
+<form method="post" data-aos="fade-in" data-aos-delay="200">
     <label for="fname">First name:</label>
     <input type="text" id="fname" name="fname" required minlength="2" maxlength="255" value="<?= htmlspecialchars($old_values["fname"] ?? "") ?>">
     <div class="error_log<?= !empty($errors["fname"]) ? " active" : "" ?>" id="fname_log"><?= $errors["fname"] ?? "" ?></div>
