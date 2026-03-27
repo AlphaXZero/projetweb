@@ -14,6 +14,7 @@ TODOLIST
 - [ ] expliquer projet
 - [ ] style avec claude
 - [ ] <a target="_blank" href="https://icons8.com/icon/m2pDdOp2qrzE/rock">Stone</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+- [ ] I used the api
 - [ ] i used mariadb
 CREATE DATABASE bdd_project_web
 DEFAULT CHARACTER SET utf8mb4

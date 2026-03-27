@@ -11,7 +11,7 @@ $current_page = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         <li><a href="<?= BASE_URL ?>/contact.php" class="<?= $current_page == BASE_URL . "/contact.php" ? "active" : "" ?>">Contact</a></li>
         <li><a href="<?= BASE_URL ?>/profile.php" class="<?= $current_page == BASE_URL . "/profile.php" ? "active" : "" ?>">Profile</a></li>
     </ul>
-    <ul class="nav-rigt">
+    <ul class="nav-right">
         <?php if (is_connected()): ?>
             <li><?= htmlspecialchars(get_user_by_id($_SESSION['user_id'])["usr_nickname"], ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8") ?></li>
             <li>

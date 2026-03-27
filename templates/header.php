@@ -4,11 +4,12 @@
 
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="<?= BASE_URL ?>/assets/js/weather.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
     <meta name="description" content="<?= $meta_description ?? "default description" ?>">
-    <script src="<?= BASE_URL ?>/assets/js/toast.js"></script>
+    <script src="<?= BASE_URL ?>/assets/js/toast.js" defer></script>
     <title><?= $title_page ?? "default" ?></title>
 </head>
 
