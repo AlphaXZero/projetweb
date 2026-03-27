@@ -2,20 +2,20 @@ TODOLIST
 # code
 - [x] Css convenable
 - [x] échappé contenu php (htmlspecialchars)
-- [ ] vérifier portabilité
+- [x] vérifier portabilité
 - [ ] envoie courriel
 - [x] ajouter vérif pas dans bdd
 - [x] ajouter your are logged in dans navebar
-- [ ] rajouter bouton deco navbar et enlever log et register si co
+- [x] rajouter bouton deco navbar et enlever log et register si co
 - [ ] passer secure en true dans auth_manager pour https
 
 # readme
-- [ ] lien vers todo et comment créer setup apache
-- [ ] expliquer projet
-- [ ] style avec claude
-- [ ] <a target="_blank" href="https://icons8.com/icon/m2pDdOp2qrzE/rock">Stone</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-- [ ] I used the api
-- [ ] i used mariadb
+- [x] lien vers todo et comment créer setup apache
+- [x] expliquer projet
+- [x] style avec claude
+- [x] <a target="_blank" href="https://icons8.com/icon/m2pDdOp2qrzE/rock">Stone</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+- [x] I used the api
+- [x] i used mariadb
 CREATE DATABASE bdd_project_web
 DEFAULT CHARACTER SET utf8mb4
 DEFAULT COLLATE utf8mb4_unicode_ci;

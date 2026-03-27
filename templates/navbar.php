@@ -13,7 +13,7 @@ $current_page = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     </ul>
     <ul class="nav-right">
         <?php if (is_connected()): ?>
-            <li><?= htmlspecialchars(get_user_by_id($_SESSION['user_id'])["usr_nickname"], ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8") ?></li>
+            <li>Connected as <?= htmlspecialchars(get_user_by_id($_SESSION['user_id'])["usr_nickname"], ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8") ?></li>
             <li>
                 <form method="post" action="<?= BASE_URL ?>/handlers/handle_logout.php">
                     <button type="submit">Log out</button>
