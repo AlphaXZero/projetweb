@@ -10,22 +10,25 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 COPY . /var/www/html/
-RUN rm -f /var/www/html/index.html
 
 RUN chown -R www-data:www-data /var/www/html
 
-# Désactiver la page par défaut d'Ubuntu
-RUN a2dissite 000-default
+# Supprimer tous les sites par défaut
+RUN rm -f /etc/apache2/sites-enabled/* \
+    && rm -f /var/www/html/index.html
 
-# Créer un vhost qui pointe vers ton projet
+# Créer le vhost
 RUN echo '<VirtualHost *:80>\n\
     DocumentRoot /var/www/html\n\
+    DirectoryIndex index.php index.html\n\
     <Directory /var/www/html>\n\
         AllowOverride All\n\
         Require all granted\n\
     </Directory>\n\
-</VirtualHost>' > /etc/apache2/sites-available/project.conf \
-    && a2ensite project.conf
+</VirtualHost>' > /etc/apache2/sites-enabled/project.conf
+
+# Activer le module PHP
+RUN a2enmod php8.1
 
 EXPOSE 80
 
