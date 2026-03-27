@@ -1,13 +1,19 @@
-FROM php:8.2-apache
+FROM ubuntu:22.04
 
-# Désactiver tous les MPM puis activer uniquement prefork
-RUN a2dismod mpm_event mpm_worker mpm_prefork 2>/dev/null; a2enmod mpm_prefork
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Extensions nécessaires
-RUN docker-php-ext-install pdo pdo_mysql mysqli
+RUN apt-get update && apt-get install -y \
+    apache2 \
+    php8.1 \
+    php8.1-mysql \
+    libapache2-mod-php8.1 \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copie tous les fichiers dans le dossier Apache
 COPY . /var/www/html/
+RUN rm -f /var/www/html/index.html
 
-# Permissions
 RUN chown -R www-data:www-data /var/www/html
+
+EXPOSE 80
+
+CMD ["apache2ctl", "-D", "FOREGROUND"]
